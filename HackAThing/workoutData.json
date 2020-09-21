@@ -1,0 +1,46 @@
+[
+    {
+        "name" : "Barbell Bench",
+        "primaryMuscle" : "Chest",
+        "secondaryMuscles" : ["Triceps", "Anterior Delts"],
+        "id": 1001,
+        "equipment" : "Barbell",
+        "imageName" : "bBBench"
+    },
+    
+    {
+        "name" : "Dumbbell Bench",
+        "primaryMuscle" : "Chest",
+        "secondaryMuscles" : ["Triceps", "Anterior Delts"],
+        "id": 1002,
+        "equipment" : "Dumb bells",
+        "imageName" : "dBBench"
+    },
+    
+    {
+        "name" : "Pull ups",
+        "primaryMuscle" : "Lats",
+        "secondaryMuscles" : ["Biceps", "Traps", "Posterior Delts"],
+        "id": 1003,
+        "equipment" : "Pullup Bar",
+        "imageName" : "pullup"
+    },
+    
+    {
+        "name" : "Dumbbell Rows",
+        "primaryMuscle" : "Lats",
+        "secondaryMuscles" : ["Rhomeboids", "Posterior Delts"],
+        "id": 1004,
+        "equipment" : "Dumb bells",
+        "imageName" : "dBRow"
+    },
+    
+    {
+        "name" : "Pushups",
+        "primaryMuscle" : "Chest"
+        "secondaryMuscles" : ["Triceps", "Anterior Delts"],
+        "id": 1005,
+        "equipment" : "None",
+        "imageName" : "pushups"
+    }
+]
