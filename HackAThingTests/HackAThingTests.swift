@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import HackAThing
+//@testable import HackAThing
 
 class HackAThingTests: XCTestCase {
 
