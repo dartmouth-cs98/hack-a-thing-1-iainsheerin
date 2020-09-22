@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct WorkoutList: View {
+    @EnvironmentObject var userData: UserData
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                Toggle(isOn: $userData.showFavoritesOnly) {
+                    Text("Favorites only")
+                }
+
+                ForEach(userData.workouts) { workout in
+                    if !self.userData.showFavoritesOnly || workout.isFavorite {
+                NavigationLink(destination: WorkoutDetail(workout: workout)) {
+                    WorkoutRow(workout: workout)
+                        }
+                    }
+                }
+            }
+            .navigationBarTitle(Text("Exercises"))
+        }
     }
 }
 

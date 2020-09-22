@@ -3,18 +3,42 @@
 //  HackAThing
 //
 //  Created by Iain Sheerin on 9/19/20.
-//
+// From tutorial https://developer.apple.com/tutorials/swiftui/handling-user-input
 
 import SwiftUI
+import CoreLocation
 
-struct Landmark: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct Landmark: Hashable, Codable, Identifiable {
+    var id: Int
+    var name: String
+    fileprivate var imageName: String
+    fileprivate var coordinates: Coordinates
+    var state: String
+    var park: String
+    var category: Category
+    var isFavorite: Bool
+
+    var locationCoordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(
+            latitude: coordinates.latitude,
+            longitude: coordinates.longitude)
+    }
+
+    enum Category: String, CaseIterable, Codable, Hashable {
+        case featured = "Featured"
+        case lakes = "Lakes"
+        case rivers = "Rivers"
+        case mountains = "Mountains"
     }
 }
 
-struct Landmark_Previews: PreviewProvider {
-    static var previews: some View {
-        Landmark()
+extension Landmark {
+    var image: Image {
+        ImageStore.shared.image(name: imageName)
     }
+}
+
+struct Coordinates: Hashable, Codable {
+    var latitude: Double
+    var longitude: Double
 }
